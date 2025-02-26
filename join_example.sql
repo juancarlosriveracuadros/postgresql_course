@@ -32,39 +32,39 @@ INSERT INTO orders (order_id, customer_id, order_date, amount, status) VALUES
 (105, 2, '2023-05-01', 449.99, 'cancelled');
 
 
--- Table a » 1,2,3,4
+-- Left Join Table a » 1,2,3,4
 select * 
 from customers 
 LEFT JOIN orders 
 on customers.customer_id = orders.customer_id;
 
--- Table a - b » 3,4
+-- Left Anti-Join  Table a - b » 3,4
 select * 
 from customers 
 LEFT JOIN orders 
 on customers.customer_id = orders.customer_id 
 where orders.customer_id is null;
 
--- Table b » 1,2,1,5,2
+-- Right Join Table b » 1,2,1,5,2
 select * 
 from customers 
 RIGHT JOIN orders 
 on customers.customer_id = orders.customer_id;
 
--- Table b - a » 5
+-- Right Anti Join Table b - a » 5
 select * 
 from customers 
 RIGHT JOIN orders 
 on customers.customer_id = orders.customer_id
 where customers.customer_id is null;
 
--- Table a oder/und b » 1,2,3,4,5
+-- Full OUTOER jOIN Table a oder/und b » 1,2,3,4,5
 select * 
 from customers 
 FULL OUTER JOIN orders 
 on customers.customer_id = orders.customer_id;
 
--- Table a or b but not a und b » 3,4,5
+--Symmetric Difference Join Table a or b but not a und b » 3,4,5
 select * 
 from customers 
 FULL OUTER JOIN orders 
@@ -73,7 +73,7 @@ where customers.customer_id is null
 OR orders.customer_id is null
 ;
 
---Table  a und b but not a or b » 1,2
+--Inner Join Table  a und b but not a or b » 1,2
 select * 
 from customers 
 INNER JOIN orders 

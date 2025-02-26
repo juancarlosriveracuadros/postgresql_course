@@ -27,3 +27,7 @@ What is the difference between DROP, TRUNCATE, and DELETE statements?
 How do you use a cursor?
 
 What is the difference between a HAVING clause and a WHERE clause?
+
+
+## Questions
+https://www.datacamp.com/blog/top-sql-interview-questions-and-answers-for-beginners-and-intermediate-practitioners
